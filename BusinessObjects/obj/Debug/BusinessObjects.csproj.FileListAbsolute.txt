@@ -1,0 +1,5 @@
+C:\Projects\Gimos\Gimos\BusinessObjects\bin\Debug\BusinessObjects.dll
+C:\Projects\Gimos\Gimos\BusinessObjects\bin\Debug\BusinessObjects.pdb
+C:\Projects\Gimos\Gimos\BusinessObjects\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Gimos\Gimos\BusinessObjects\obj\Debug\BusinessObjects.dll
+C:\Projects\Gimos\Gimos\BusinessObjects\obj\Debug\BusinessObjects.pdb
