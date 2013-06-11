@@ -1,0 +1,8 @@
+C:\Projects\Gimos\Gimos\DAO\bin\Debug\DAO.dll.config
+C:\Projects\Gimos\Gimos\DAO\bin\Debug\DAO.dll
+C:\Projects\Gimos\Gimos\DAO\bin\Debug\DAO.pdb
+C:\Projects\Gimos\Gimos\DAO\bin\Debug\BusinessObjects.dll
+C:\Projects\Gimos\Gimos\DAO\bin\Debug\BusinessObjects.pdb
+C:\Projects\Gimos\Gimos\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Gimos\Gimos\DAO\obj\Debug\DAO.dll
+C:\Projects\Gimos\Gimos\DAO\obj\Debug\DAO.pdb
