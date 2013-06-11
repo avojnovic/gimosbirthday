@@ -79,5 +79,14 @@ namespace BusinessObjects
         }
 
 
+        private List<Envio> _listaEnvios;
+
+        public List<Envio> ListaEnvios
+        {
+            get { return _listaEnvios; }
+            set { _listaEnvios = value; }
+        }
+
+
     }
 }

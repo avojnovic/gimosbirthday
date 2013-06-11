@@ -11,3 +11,16 @@ C:\Projects\Gimos\Gimos\Gimos\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Projects\Gimos\Gimos\Gimos\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Projects\Gimos\Gimos\Gimos\obj\x86\Debug\Gimos.exe
 C:\Projects\Gimos\Gimos\Gimos\obj\x86\Debug\Gimos.pdb
+C:\Projects\Gimos\Gimos\obj\x86\Debug\Gimos.exe
+C:\Projects\Gimos\Gimos\obj\x86\Debug\Gimos.pdb
+C:\Projects\Gimos\Gimos\bin\Debug\Gimos.exe
+C:\Projects\Gimos\Gimos\bin\Debug\Gimos.pdb
+C:\Projects\Gimos\Gimos\bin\Debug\BusinessObjects.dll
+C:\Projects\Gimos\Gimos\bin\Debug\DAO.dll
+C:\Projects\Gimos\Gimos\bin\Debug\BusinessObjects.pdb
+C:\Projects\Gimos\Gimos\bin\Debug\DAO.pdb
+C:\Projects\Gimos\Gimos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\Gimos\Gimos\obj\x86\Debug\Gimos.Main.resources
+C:\Projects\Gimos\Gimos\obj\x86\Debug\Gimos.Properties.Resources.resources
+C:\Projects\Gimos\Gimos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Projects\Gimos\Gimos\obj\x86\Debug\GenerateResource.write.1.tlog

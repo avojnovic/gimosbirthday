@@ -138,14 +138,18 @@ namespace Gimos
 
         private void Limpiar()
         {
+            lblNombre.ForeColor = Color.Black;
+            lblApellido.ForeColor = Color.Black;
+            lblEmail.ForeColor = Color.Black;
+            lblNacimiento.ForeColor = Color.Black;
+
+
             TxtId.Text = "";
             TxtNombre.Text = "";
             TxtApellido.Text = "";
             TxtFechaNacimiento.Value = DateTime.Today;
             TxtEmail.Text = "";
         }
-
-
 
         private void email(Contact c)
         {
@@ -172,13 +176,20 @@ namespace Gimos
 
                 smtpClient.Send(mail);
 
-                // LblMensaje.Text = "Email enviado correctamente";
+                lblComentarios.Text = "Email enviado correctamente";
+
+                Envio e = new Envio();
+                e.FechaEnvio = DateTime.Today;
+                e.Texto = mail.Body;
+
+                EnviosDAO.Insertar(Application.StartupPath, c,e);
+
 
             }
             catch (Exception ex)
             {
 
-                //  LblMensaje.Text = "Error al enviar el Email: " + ex.Message;
+                lblComentarios.Text = "Error al enviar el Email: " + ex.Message;
             }
         }
 
@@ -207,6 +218,7 @@ namespace Gimos
 
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
+            lblComentarios.Text = "";
             if (GuardarCumpleanos())
             {
 
@@ -219,7 +231,23 @@ namespace Gimos
                 foreach (Contact c in filtrados)
                 {
                     Application.DoEvents();
-                    email(c);
+                    c.ListaEnvios=EnviosDAO.get(Application.StartupPath, c);
+
+                    if(c.ListaEnvios.Count>0)
+                    {
+                        var maxEnvio = c.ListaEnvios.Max(o => o.FechaEnvio);
+
+                        if ((DateTime.Today-maxEnvio).Days>(int.Parse(TxtCantDiasAntes.Text)+c.DiasParaCumpleanos))
+                        {
+                            email(c);
+                        }
+
+
+                    }
+                    else
+                    {
+                        email(c);
+                    }
                 }
             }
 
@@ -232,6 +260,8 @@ namespace Gimos
 
         private bool GuardarCumpleanos()
         {
+            lblComentarios.Text = "";
+
             Cumpleanos c = new Cumpleanos();
             Boolean guardar = true;
 
@@ -310,7 +340,6 @@ namespace Gimos
                 return;
             }
         }
-
 
 
     }
