@@ -60,6 +60,7 @@
             this.lblDias = new System.Windows.Forms.Label();
             this.TxtCantDiasAntes = new System.Windows.Forms.TextBox();
             this.BtnGuardarCumpleanos = new System.Windows.Forms.Button();
+            this.lblComentarios = new System.Windows.Forms.Label();
             this.tableLayoutPanelPrincipal.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -135,7 +136,7 @@
             this.GridViewContactos.Location = new System.Drawing.Point(47, 63);
             this.GridViewContactos.Name = "GridViewContactos";
             this.GridViewContactos.Size = new System.Drawing.Size(703, 281);
-            this.GridViewContactos.TabIndex = 0;
+            this.GridViewContactos.TabIndex = 6;
             this.GridViewContactos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewContactos_CellDoubleClick);
             // 
             // tableLayoutContactoABM
@@ -146,7 +147,7 @@
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableLayoutContactoABM.Controls.Add(this.lblEmail, 3, 0);
             this.tableLayoutContactoABM.Controls.Add(this.lblApellido, 2, 0);
             this.tableLayoutContactoABM.Controls.Add(this.lblNombre, 1, 0);
@@ -172,7 +173,7 @@
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(410, 14);
+            this.lblEmail.Location = new System.Drawing.Point(408, 14);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 7;
@@ -182,7 +183,7 @@
             // 
             this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(231, 14);
+            this.lblApellido.Location = new System.Drawing.Point(229, 14);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 6;
@@ -192,7 +193,7 @@
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(88, 14);
+            this.lblNombre.Location = new System.Drawing.Point(87, 14);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 3;
@@ -215,31 +216,31 @@
             this.TxtId.Name = "TxtId";
             this.TxtId.ReadOnly = true;
             this.TxtId.Size = new System.Drawing.Size(27, 20);
-            this.TxtId.TabIndex = 2;
+            this.TxtId.TabIndex = 99;
             // 
             // TxtNombre
             // 
             this.TxtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtNombre.Location = new System.Drawing.Point(36, 30);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(149, 20);
-            this.TxtNombre.TabIndex = 4;
+            this.TxtNombre.Size = new System.Drawing.Size(147, 20);
+            this.TxtNombre.TabIndex = 1;
             // 
             // TxtApellido
             // 
             this.TxtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtApellido.Location = new System.Drawing.Point(191, 30);
+            this.TxtApellido.Location = new System.Drawing.Point(189, 30);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(124, 20);
-            this.TxtApellido.TabIndex = 5;
+            this.TxtApellido.TabIndex = 2;
             // 
             // BtnGuardarContacto
             // 
             this.BtnGuardarContacto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnGuardarContacto.Location = new System.Drawing.Point(641, 30);
+            this.BtnGuardarContacto.Location = new System.Drawing.Point(639, 30);
             this.BtnGuardarContacto.Name = "BtnGuardarContacto";
-            this.BtnGuardarContacto.Size = new System.Drawing.Size(59, 21);
-            this.BtnGuardarContacto.TabIndex = 0;
+            this.BtnGuardarContacto.Size = new System.Drawing.Size(61, 21);
+            this.BtnGuardarContacto.TabIndex = 5;
             this.BtnGuardarContacto.Text = "Guardar";
             this.BtnGuardarContacto.UseVisualStyleBackColor = true;
             this.BtnGuardarContacto.Click += new System.EventHandler(this.BtnGuardarContacto_Click);
@@ -248,7 +249,7 @@
             // 
             this.lblNacimiento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNacimiento.AutoSize = true;
-            this.lblNacimiento.Location = new System.Drawing.Point(550, 14);
+            this.lblNacimiento.Location = new System.Drawing.Point(548, 14);
             this.lblNacimiento.Name = "lblNacimiento";
             this.lblNacimiento.Size = new System.Drawing.Size(72, 13);
             this.lblNacimiento.TabIndex = 8;
@@ -257,26 +258,26 @@
             // TxtEmail
             // 
             this.TxtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtEmail.Location = new System.Drawing.Point(321, 30);
+            this.TxtEmail.Location = new System.Drawing.Point(319, 30);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(211, 20);
-            this.TxtEmail.TabIndex = 9;
+            this.TxtEmail.TabIndex = 3;
             // 
             // TxtFechaNacimiento
             // 
             this.TxtFechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TxtFechaNacimiento.Location = new System.Drawing.Point(538, 30);
+            this.TxtFechaNacimiento.Location = new System.Drawing.Point(536, 30);
             this.TxtFechaNacimiento.Name = "TxtFechaNacimiento";
             this.TxtFechaNacimiento.Size = new System.Drawing.Size(97, 20);
-            this.TxtFechaNacimiento.TabIndex = 10;
+            this.TxtFechaNacimiento.TabIndex = 4;
             // 
             // BtnLimpiar
             // 
-            this.BtnLimpiar.Location = new System.Drawing.Point(641, 3);
+            this.BtnLimpiar.Location = new System.Drawing.Point(639, 3);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(57, 21);
-            this.BtnLimpiar.TabIndex = 11;
+            this.BtnLimpiar.TabIndex = 7;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = true;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
@@ -298,7 +299,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.32143F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.67857F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tableLayoutPanel1.Controls.Add(this.lblAsunto, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblBody, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.TxtSubject, 1, 2);
@@ -311,6 +312,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblDias, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.TxtCantDiasAntes, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.BtnGuardarCumpleanos, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblComentarios, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -349,9 +351,9 @@
             // TxtSubject
             // 
             this.TxtSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtSubject.Location = new System.Drawing.Point(99, 95);
+            this.TxtSubject.Location = new System.Drawing.Point(98, 95);
             this.TxtSubject.Name = "TxtSubject";
-            this.TxtSubject.Size = new System.Drawing.Size(328, 20);
+            this.TxtSubject.Size = new System.Drawing.Size(327, 20);
             this.TxtSubject.TabIndex = 2;
             // 
             // TxtBody
@@ -359,15 +361,15 @@
             this.TxtBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtBody.Location = new System.Drawing.Point(99, 141);
+            this.TxtBody.Location = new System.Drawing.Point(98, 141);
             this.TxtBody.Multiline = true;
             this.TxtBody.Name = "TxtBody";
-            this.TxtBody.Size = new System.Drawing.Size(328, 77);
+            this.TxtBody.Size = new System.Drawing.Size(327, 77);
             this.TxtBody.TabIndex = 3;
             // 
             // BtnEnviar
             // 
-            this.BtnEnviar.Location = new System.Drawing.Point(508, 337);
+            this.BtnEnviar.Location = new System.Drawing.Point(506, 337);
             this.BtnEnviar.Name = "BtnEnviar";
             this.BtnEnviar.Size = new System.Drawing.Size(75, 23);
             this.BtnEnviar.TabIndex = 4;
@@ -398,18 +400,18 @@
             // TxtContrasena
             // 
             this.TxtContrasena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtContrasena.Location = new System.Drawing.Point(99, 43);
+            this.TxtContrasena.Location = new System.Drawing.Point(98, 43);
             this.TxtContrasena.Name = "TxtContrasena";
             this.TxtContrasena.PasswordChar = '*';
-            this.TxtContrasena.Size = new System.Drawing.Size(328, 20);
+            this.TxtContrasena.Size = new System.Drawing.Size(327, 20);
             this.TxtContrasena.TabIndex = 7;
             // 
             // TxtEmailOrigen
             // 
             this.TxtEmailOrigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtEmailOrigen.Location = new System.Drawing.Point(99, 7);
+            this.TxtEmailOrigen.Location = new System.Drawing.Point(98, 7);
             this.TxtEmailOrigen.Name = "TxtEmailOrigen";
-            this.TxtEmailOrigen.Size = new System.Drawing.Size(328, 20);
+            this.TxtEmailOrigen.Size = new System.Drawing.Size(327, 20);
             this.TxtEmailOrigen.TabIndex = 8;
             // 
             // lblDias
@@ -425,22 +427,32 @@
             // TxtCantDiasAntes
             // 
             this.TxtCantDiasAntes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCantDiasAntes.Location = new System.Drawing.Point(99, 229);
+            this.TxtCantDiasAntes.Location = new System.Drawing.Point(98, 229);
             this.TxtCantDiasAntes.MaxLength = 3;
             this.TxtCantDiasAntes.Name = "TxtCantDiasAntes";
-            this.TxtCantDiasAntes.Size = new System.Drawing.Size(328, 20);
+            this.TxtCantDiasAntes.Size = new System.Drawing.Size(327, 20);
             this.TxtCantDiasAntes.TabIndex = 10;
             this.TxtCantDiasAntes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantDiasAntes_KeyPress);
             // 
             // BtnGuardarCumpleanos
             // 
-            this.BtnGuardarCumpleanos.Location = new System.Drawing.Point(433, 224);
+            this.BtnGuardarCumpleanos.Location = new System.Drawing.Point(431, 224);
             this.BtnGuardarCumpleanos.Name = "BtnGuardarCumpleanos";
             this.BtnGuardarCumpleanos.Size = new System.Drawing.Size(69, 23);
             this.BtnGuardarCumpleanos.TabIndex = 11;
             this.BtnGuardarCumpleanos.Text = "Guardar Cambios";
             this.BtnGuardarCumpleanos.UseVisualStyleBackColor = true;
             this.BtnGuardarCumpleanos.Click += new System.EventHandler(this.BtnGuardarCumpleanos_Click);
+            // 
+            // lblComentarios
+            // 
+            this.lblComentarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblComentarios.AutoSize = true;
+            this.lblComentarios.ForeColor = System.Drawing.Color.Red;
+            this.lblComentarios.Location = new System.Drawing.Point(98, 308);
+            this.lblComentarios.Name = "lblComentarios";
+            this.lblComentarios.Size = new System.Drawing.Size(0, 13);
+            this.lblComentarios.TabIndex = 12;
             // 
             // Main
             // 
@@ -499,6 +511,7 @@
         private System.Windows.Forms.Label lblDias;
         private System.Windows.Forms.TextBox TxtCantDiasAntes;
         private System.Windows.Forms.Button BtnGuardarCumpleanos;
+        private System.Windows.Forms.Label lblComentarios;
     }
 }
 
