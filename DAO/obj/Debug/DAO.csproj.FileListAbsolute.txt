@@ -14,3 +14,11 @@ C:\Projects\Gimos\DAO\bin\Debug\BusinessObjects.pdb
 C:\Projects\Gimos\DAO\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\Gimos\DAO\obj\Debug\DAO.dll
 C:\Projects\Gimos\DAO\obj\Debug\DAO.pdb
+D:\Proyectos\Gimos\DAO\bin\Debug\DAO.dll.config
+D:\Proyectos\Gimos\DAO\bin\Debug\DAO.dll
+D:\Proyectos\Gimos\DAO\bin\Debug\DAO.pdb
+D:\Proyectos\Gimos\DAO\bin\Debug\BusinessObjects.dll
+D:\Proyectos\Gimos\DAO\bin\Debug\BusinessObjects.pdb
+D:\Proyectos\Gimos\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Proyectos\Gimos\DAO\obj\Debug\DAO.dll
+D:\Proyectos\Gimos\DAO\obj\Debug\DAO.pdb

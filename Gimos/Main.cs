@@ -11,6 +11,7 @@ using BusinessObjects;
 using System.Net.Mail;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Net.Mime;
 
 namespace Gimos
 {
@@ -247,7 +248,7 @@ namespace Gimos
 
 
                 mail.IsBodyHtml = true;
-                mail.Body = PopulateBody();
+                mail.Body = PopulateBody(mail);
                 mail.Subject = TxtSubject.Text;
 
                 smtpClient.Send(mail);
@@ -270,14 +271,26 @@ namespace Gimos
             }
         }
 
-        private string PopulateBody()
+        private string PopulateBody(MailMessage mail)
         {
             string body ="<a>" + TxtBody.Text + "</a>";
 
             if (CheckImagenCumplanos.Checked)
             {
-                body = body + "<br>";
-                body = body + string.Format("<img src=@'{0}'/>", TxtImagen.Text);
+                //body = body + "<br>";
+                //body = body + string.Format("<img src=@'{0}'/>", TxtImagen.Text);
+
+
+
+
+                Attachment inline = new Attachment(TxtImagen.Text);
+                inline.ContentDisposition.Inline = true;
+                inline.ContentDisposition.DispositionType = DispositionTypeNames.Inline;
+                inline.ContentId = "1";
+                inline.ContentType.MediaType = "image/JPG";
+                inline.ContentType.Name = Path.GetFileName(TxtImagen.Text);
+
+                mail.Attachments.Add(inline);
 
             }
 
@@ -482,7 +495,7 @@ namespace Gimos
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "*.jpg|*.jpeg";
+            openFileDialog1.Filter = "Imagenes |*.jpg;*.jpeg;*.png;";
             openFileDialog1.FilterIndex = 1;
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.Multiselect = false;

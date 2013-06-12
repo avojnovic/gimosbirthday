@@ -8,3 +8,7 @@ C:\Projects\Gimos\BusinessObjects\bin\Debug\BusinessObjects.pdb
 C:\Projects\Gimos\BusinessObjects\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\Gimos\BusinessObjects\obj\Debug\BusinessObjects.dll
 C:\Projects\Gimos\BusinessObjects\obj\Debug\BusinessObjects.pdb
+D:\Proyectos\Gimos\BusinessObjects\bin\Debug\BusinessObjects.dll
+D:\Proyectos\Gimos\BusinessObjects\bin\Debug\BusinessObjects.pdb
+D:\Proyectos\Gimos\BusinessObjects\obj\Debug\BusinessObjects.dll
+D:\Proyectos\Gimos\BusinessObjects\obj\Debug\BusinessObjects.pdb
