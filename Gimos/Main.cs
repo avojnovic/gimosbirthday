@@ -30,6 +30,7 @@ namespace Gimos
         private void Main_Load(object sender, EventArgs e)
         {
 
+
             setStyle();
             
             _contactos = ContactDAO.get(Application.StartupPath);
@@ -41,6 +42,7 @@ namespace Gimos
 
         private void setStyle()
         {
+
             var botones = GetAll(this, typeof(Button));
             foreach (var b in botones)
             {

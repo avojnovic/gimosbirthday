@@ -63,16 +63,16 @@
             this.TxtEmailOrigen = new System.Windows.Forms.TextBox();
             this.lblDias = new System.Windows.Forms.Label();
             this.TxtCantDiasAntes = new System.Windows.Forms.TextBox();
-            this.BtnEnviar = new System.Windows.Forms.Button();
-            this.BtnGuardarCumpleanos = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnImagenCumplanos = new System.Windows.Forms.Button();
             this.TxtImagen = new System.Windows.Forms.TextBox();
             this.CheckImagenCumplanos = new System.Windows.Forms.CheckBox();
             this.lblComentarios = new System.Windows.Forms.Label();
             this.lblCantidadEmails = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnGuardarCumpleanos = new System.Windows.Forms.Button();
+            this.BtnEnviar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelPrincipal.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,8 +83,8 @@
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanelPrincipal
@@ -168,7 +168,7 @@
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutContactoABM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutContactoABM.Controls.Add(this.lblEmail, 3, 0);
             this.tableLayoutContactoABM.Controls.Add(this.lblApellido, 2, 0);
             this.tableLayoutContactoABM.Controls.Add(this.lblNombre, 1, 0);
@@ -501,30 +501,6 @@
             this.TxtCantDiasAntes.TabIndex = 10;
             this.TxtCantDiasAntes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantDiasAntes_KeyPress);
             // 
-            // BtnEnviar
-            // 
-            this.BtnEnviar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnEnviar.AutoSize = true;
-            this.BtnEnviar.Location = new System.Drawing.Point(486, 3);
-            this.BtnEnviar.Name = "BtnEnviar";
-            this.BtnEnviar.Size = new System.Drawing.Size(136, 23);
-            this.BtnEnviar.TabIndex = 4;
-            this.BtnEnviar.Text = "Guardar y Enviar";
-            this.BtnEnviar.UseVisualStyleBackColor = true;
-            this.BtnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
-            // 
-            // BtnGuardarCumpleanos
-            // 
-            this.BtnGuardarCumpleanos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BtnGuardarCumpleanos.AutoSize = true;
-            this.BtnGuardarCumpleanos.Location = new System.Drawing.Point(135, 3);
-            this.BtnGuardarCumpleanos.Name = "BtnGuardarCumpleanos";
-            this.BtnGuardarCumpleanos.Size = new System.Drawing.Size(98, 23);
-            this.BtnGuardarCumpleanos.TabIndex = 11;
-            this.BtnGuardarCumpleanos.Text = "Guardar Cambios";
-            this.BtnGuardarCumpleanos.UseVisualStyleBackColor = true;
-            this.BtnGuardarCumpleanos.Click += new System.EventHandler(this.BtnGuardarCumpleanos_Click);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -590,17 +566,6 @@
             this.lblCantidadEmails.Size = new System.Drawing.Size(0, 8);
             this.lblCantidadEmails.TabIndex = 13;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(699, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(257, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -612,9 +577,44 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(137, 357);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(739, 37);
             this.tableLayoutPanel3.TabIndex = 19;
+            // 
+            // BtnGuardarCumpleanos
+            // 
+            this.BtnGuardarCumpleanos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnGuardarCumpleanos.AutoSize = true;
+            this.BtnGuardarCumpleanos.Location = new System.Drawing.Point(135, 3);
+            this.BtnGuardarCumpleanos.Name = "BtnGuardarCumpleanos";
+            this.BtnGuardarCumpleanos.Size = new System.Drawing.Size(98, 23);
+            this.BtnGuardarCumpleanos.TabIndex = 11;
+            this.BtnGuardarCumpleanos.Text = "Guardar Cambios";
+            this.BtnGuardarCumpleanos.UseVisualStyleBackColor = true;
+            this.BtnGuardarCumpleanos.Click += new System.EventHandler(this.BtnGuardarCumpleanos_Click);
+            // 
+            // BtnEnviar
+            // 
+            this.BtnEnviar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtnEnviar.AutoSize = true;
+            this.BtnEnviar.Location = new System.Drawing.Point(486, 3);
+            this.BtnEnviar.Name = "BtnEnviar";
+            this.BtnEnviar.Size = new System.Drawing.Size(136, 23);
+            this.BtnEnviar.TabIndex = 4;
+            this.BtnEnviar.Text = "Guardar y Enviar";
+            this.BtnEnviar.UseVisualStyleBackColor = true;
+            this.BtnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(699, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(257, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -622,6 +622,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 629);
             this.Controls.Add(this.tableLayoutPanelPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Gimos";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -640,9 +641,9 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
