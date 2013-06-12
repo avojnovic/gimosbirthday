@@ -14,7 +14,7 @@ namespace DAO
     public static class ContactDAO
     {
 
-        public static List<Contact> get(string dbPath)
+        public static Dictionary<int,Contact> get(string dbPath)
         {
             string connection = DAO.Properties.Settings.Default.ConnectionString;
             connection = connection.Replace("PATH", dbPath);
@@ -26,7 +26,7 @@ namespace DAO
             OleDbDataReader reader = cmd.ExecuteReader();
 
 
-            List<Contact> contacts = new List<Contact>();
+            Dictionary<int, Contact> contacts = new Dictionary<int, Contact>();
             while (reader.Read())
             {
                 Contact c = new Contact();
@@ -40,7 +40,7 @@ namespace DAO
                 if (!reader.IsDBNull(6))
                 c.FechaModificacion = reader.GetDateTime(6);
 
-                contacts.Add(c);
+                contacts.Add(c.Id,c);
             }
             reader.Close();
 
@@ -49,7 +49,7 @@ namespace DAO
         }
 
 
-        public static void insert(string dbPath, Contact c)
+        public static int insert(string dbPath, Contact c)
         {
             string strconnection = DAO.Properties.Settings.Default.ConnectionString;
             strconnection = strconnection.Replace("PATH", dbPath);
@@ -76,15 +76,22 @@ namespace DAO
 
             cmd.Connection = connection;
             connection.Open();
-            cmd.Transaction = connection.BeginTransaction();
+            //cmd.Transaction = connection.BeginTransaction();
 
             int rows= cmd.ExecuteNonQuery();
 
-         
-            cmd.Transaction.Commit();
+            string query2 = "Select @@Identity";
+            int ID;
+
+            cmd.CommandText = query2;
+            ID = (int)cmd.ExecuteScalar();
+
+           // cmd.Transaction.Commit();
             connection.Dispose();
             connection.Close();
 
+
+            return ID;
         }
 
         public static void update(string dbPath, Contact c)
