@@ -10,11 +10,18 @@ using DAO;
 using BusinessObjects;
 using System.Net.Mail;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Gimos
 {
     public partial class Main : Form
     {
+
+        Dictionary<int, Contact> _contactos = new Dictionary<int, Contact>();
+        int emailsCorrectos = 0;
+        int emailsIncorrectos = 0;
+
+
         public Main()
         {
             InitializeComponent();
@@ -23,12 +30,61 @@ namespace Gimos
         private void Main_Load(object sender, EventArgs e)
         {
 
+            setStyle();
+            
+            _contactos = ContactDAO.get(Application.StartupPath);
             loadData();
+
+
+
         }
+
+        private void setStyle()
+        {
+            var botones = GetAll(this, typeof(Button));
+            foreach (var b in botones)
+            {
+                b.BackColor = Color.Black;
+                b.ForeColor = Color.White;
+                b.Font = new Font("Arial", 9, FontStyle.Bold);
+            }
+
+
+            var labels = GetAll(this, typeof(Label));
+            foreach (var b in labels)
+            {
+                b.ForeColor = Color.Black;
+                b.Font = new Font("Arial", 9, FontStyle.Bold);
+            }
+
+            var checkboxs = GetAll(this, typeof(CheckBox));
+            foreach (var b in checkboxs)
+            {
+                b.ForeColor = Color.Black;
+                b.Font = new Font("Arial", 9, FontStyle.Bold);
+            }
+
+            var tabs = GetAll(this, typeof(TabControl));
+            foreach (var b in tabs)
+            {
+                b.Font = new Font("Arial", 9);
+            }
+
+        }
+
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
+        }
+
 
         private void loadData()
         {
-            GridViewContactos.DataSource = ContactDAO.get(Application.StartupPath);
+            GridViewContactos.DataSource = _contactos.Values.ToList();
 
             Cumpleanos c = CumpleanosDAO.get(Application.StartupPath).First();
 
@@ -38,6 +94,8 @@ namespace Gimos
             TxtEmailOrigen.Text = c.Email;
             TxtSubject.Text = c.Subject;
 
+            TxtImagen.Text=c.Adjunto;
+            CheckImagenCumplanos.Checked=c.Imagen;
         }
 
         private void BtnGuardarContacto_Click(object sender, EventArgs e)
@@ -61,7 +119,7 @@ namespace Gimos
             else
             {
                 lblNombre.ForeColor = Color.Black;
-                c.Nombre = TxtNombre.Text;
+                c.Nombre = TxtNombre.Text.Trim();
             }
 
             if (TxtApellido.Text.Trim() == "")
@@ -72,7 +130,7 @@ namespace Gimos
             else
             {
                 lblApellido.ForeColor = Color.Black;
-                c.Apellido = TxtApellido.Text;
+                c.Apellido = TxtApellido.Text.Trim();
             }
 
             if (TxtEmail.Text.Trim() == "")
@@ -82,8 +140,18 @@ namespace Gimos
             }
             else
             {
-                lblEmail.ForeColor = Color.Black;
-                c.Email = TxtEmail.Text;
+                Match rex = Regex.Match(TxtEmail.Text.Trim(' '), "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,3})$", RegexOptions.IgnoreCase);
+                if (rex.Success == false)
+                {
+                    lblEmail.ForeColor = Color.Red;
+                    guardar = false;
+                }
+                else
+                {
+                    lblEmail.ForeColor = Color.Black;
+                    c.Email = TxtEmail.Text.Trim();
+                }
+
             }
 
             if (TxtFechaNacimiento.Text.Trim() == "")
@@ -94,7 +162,7 @@ namespace Gimos
             else
             {
                 lblNacimiento.ForeColor = Color.Black;
-                c.FechaNacimiento = TxtFechaNacimiento.Value;
+                c.FechaNacimiento = DateTime.Parse(TxtFechaNacimiento.Value.ToShortDateString());
             }
 
 
@@ -104,14 +172,18 @@ namespace Gimos
                 {
                     c.FechaModificacion = DateTime.Today;
                     ContactDAO.update(Application.StartupPath, c);
+                    c.FechaAlta = _contactos[c.Id].FechaAlta;
+                    _contactos[c.Id] = c;
+
                 }
                 else
                 {
                     c.FechaAlta = DateTime.Today;
-                    ContactDAO.insert(Application.StartupPath, c);
+                    c.Id = ContactDAO.insert(Application.StartupPath, c);
+                    _contactos.Add(c.Id, c);
                 }
 
-                GridViewContactos.DataSource = ContactDAO.get(Application.StartupPath);
+                GridViewContactos.DataSource = _contactos.Values.ToList();
                 Limpiar();
             }
 
@@ -149,6 +221,8 @@ namespace Gimos
             TxtApellido.Text = "";
             TxtFechaNacimiento.Value = DateTime.Today;
             TxtEmail.Text = "";
+
+            GridViewContactos.DataSource = _contactos.Values.ToList();
         }
 
         private void email(Contact c)
@@ -176,26 +250,35 @@ namespace Gimos
 
                 smtpClient.Send(mail);
 
-                lblComentarios.Text = "Email enviado correctamente";
+                //lblComentarios.Text = "Email enviado correctamente";
 
                 Envio e = new Envio();
                 e.FechaEnvio = DateTime.Today;
                 e.Texto = mail.Body;
 
-                EnviosDAO.Insertar(Application.StartupPath, c,e);
-
+                EnviosDAO.Insertar(Application.StartupPath, c, e);
+                emailsCorrectos++;
 
             }
             catch (Exception ex)
             {
-
-                lblComentarios.Text = "Error al enviar el Email: " + ex.Message;
+               
+                emailsIncorrectos++;
+                lblComentarios.Text = lblComentarios.Text +  " {Error: " + ex.Message + ", "+c.Email +"} ";
             }
         }
 
         private string PopulateBody()
         {
-            string body = TxtBody.Text;
+            string body ="<a>" + TxtBody.Text + "</a>";
+
+            if (CheckImagenCumplanos.Checked)
+            {
+                body = body + "<br>";
+                body = body + string.Format("<img src=@'{0}'/>", TxtImagen.Text);
+
+            }
+
             //using (StreamReader reader = new StreamReader(Server.MapPath("~/Pagos/EmailTemplate.htm")))
             //{
             //    body = reader.ReadToEnd();
@@ -218,11 +301,15 @@ namespace Gimos
 
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
+            emailsCorrectos = 0;
+            emailsIncorrectos = 0;
+            
+            lblCantidadEmails.Text = "";
             lblComentarios.Text = "";
             if (GuardarCumpleanos())
             {
 
-                var contactos = ContactDAO.get(Application.StartupPath);
+                var contactos = _contactos.Values.ToList();
 
                 var filtrados = from c in contactos
                                 where c.DiasParaCumpleanos <= int.Parse(TxtCantDiasAntes.Text)
@@ -231,13 +318,13 @@ namespace Gimos
                 foreach (Contact c in filtrados)
                 {
                     Application.DoEvents();
-                    c.ListaEnvios=EnviosDAO.get(Application.StartupPath, c);
+                    c.ListaEnvios = EnviosDAO.get(Application.StartupPath, c);
 
-                    if(c.ListaEnvios.Count>0)
+                    if (c.ListaEnvios.Count > 0)
                     {
                         var maxEnvio = c.ListaEnvios.Max(o => o.FechaEnvio);
 
-                        if ((DateTime.Today-maxEnvio).Days>(int.Parse(TxtCantDiasAntes.Text)+c.DiasParaCumpleanos))
+                        if ((DateTime.Today - maxEnvio).Days > (int.Parse(TxtCantDiasAntes.Text) + c.DiasParaCumpleanos))
                         {
                             email(c);
                         }
@@ -249,6 +336,9 @@ namespace Gimos
                         email(c);
                     }
                 }
+               
+                lblCantidadEmails.Text = string.Format("Emails enviados={0}, Emails Erroneos={1}",emailsCorrectos,emailsIncorrectos);
+
             }
 
         }
@@ -261,13 +351,14 @@ namespace Gimos
         private bool GuardarCumpleanos()
         {
             lblComentarios.Text = "";
+            lblCantidadEmails.Text = "";
 
             Cumpleanos c = new Cumpleanos();
             Boolean guardar = true;
 
             if (TxtBody.Text.Trim() == "")
             {
-               lblBody.ForeColor = Color.Red;
+                lblBody.ForeColor = Color.Red;
                 guardar = false;
             }
             else
@@ -278,7 +369,7 @@ namespace Gimos
 
             if (TxtCantDiasAntes.Text.Trim() == "")
             {
-               lblDias.ForeColor = Color.Red;
+                lblDias.ForeColor = Color.Red;
                 guardar = false;
             }
             else
@@ -289,7 +380,7 @@ namespace Gimos
 
             if (TxtContrasena.Text.Trim() == "")
             {
-               lblContrasena.ForeColor = Color.Red;
+                lblContrasena.ForeColor = Color.Red;
                 guardar = false;
             }
             else
@@ -300,7 +391,7 @@ namespace Gimos
 
             if (TxtEmailOrigen.Text.Trim() == "")
             {
-              lblEmailOrigen.ForeColor = Color.Red;
+                lblEmailOrigen.ForeColor = Color.Red;
                 guardar = false;
             }
             else
@@ -311,7 +402,7 @@ namespace Gimos
 
             if (TxtSubject.Text.Trim() == "")
             {
-              lblAsunto.ForeColor = Color.Red;
+                lblAsunto.ForeColor = Color.Red;
                 guardar = false;
             }
             else
@@ -321,10 +412,13 @@ namespace Gimos
             }
 
 
+            c.Adjunto = TxtImagen.Text;
+            c.Imagen = CheckImagenCumplanos.Checked;
+
             if (guardar)
             {
                 CumpleanosDAO.update(Application.StartupPath, c);
-                           
+
             }
 
 
@@ -340,6 +434,64 @@ namespace Gimos
                 return;
             }
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
+            string texto = TxtBuscar.Text.ToUpper().Trim();
+
+            if (texto != "")
+            {
+
+                var contactos = _contactos.Values.ToList();
+
+                var filtrados = from c in contactos
+                                where c.Nombre.ToUpper().Contains(texto) || c.Apellido.ToUpper().Contains(texto) || c.Email.ToUpper().Contains(texto) || c.FechaNacimiento.ToShortDateString().ToUpper().Contains(texto)
+                                select c;
+
+                GridViewContactos.DataSource = filtrados.ToList();
+
+            }
+            else
+            {
+                Limpiar();
+            }
+        }
+
+        private void TxtEmail_Leave(object sender, EventArgs e)
+        {
+            if (TxtEmail.Text.Trim() != "")
+            {
+               Match rex = Regex.Match(TxtEmail.Text.Trim(' '), "^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,3})$", RegexOptions.IgnoreCase);
+                if (rex.Success == false)
+                {
+                    lblEmail.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblEmail.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void BtnImagenCumplanos_Click(object sender, EventArgs e)
+        {
+      
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "*.jpg|*.jpeg";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+            openFileDialog1.Multiselect = false;
+
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+              TxtImagen.Text = openFileDialog1.FileName;
+            }
+        }
+
 
 
     }

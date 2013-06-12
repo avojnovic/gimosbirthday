@@ -54,5 +54,22 @@ namespace BusinessObjects
             get { return _dias; }
             set { _dias = value; }
         }
+
+
+        private bool _imagen;
+
+        public bool Imagen
+        {
+            get { return _imagen; }
+            set { _imagen = value; }
+        }
+        private string _adjunto;
+
+        public string Adjunto
+        {
+            get { return _adjunto; }
+            set { _adjunto = value; }
+        }
+
     }
 }

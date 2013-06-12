@@ -33,6 +33,8 @@ namespace DAO
                 c.Email = reader.GetString(3);
                 c.Contrasena = reader.GetString(4);
                 c.Dias = reader.GetInt32(5);
+                c.Imagen = reader.GetBoolean(6);
+                c.Adjunto = reader.GetString(7);
                 
                 cumpleanos.Add(c);
             }
@@ -55,7 +57,7 @@ namespace DAO
 
             OleDbCommand cmd = new OleDbCommand();
 
-            cmd.CommandText = @"UPDATE Cumpleanos SET Body=@Body,Subject=@Subject,Email=@Email,Contrasena=@Contrasena,DiasAntes=@DiasAntes";
+            cmd.CommandText = @"UPDATE Cumpleanos SET Body=@Body,Subject=@Subject,Email=@Email,Contrasena=@Contrasena,DiasAntes=@DiasAntes,Imagen=@Imagen,Adjunto=@Adjunto";
 
             cmd.CommandType = CommandType.Text;
 
@@ -64,6 +66,8 @@ namespace DAO
             cmd.Parameters.Add("@Email", OleDbType.VarChar, 255).Value = c.Email;
             cmd.Parameters.Add("@Contrasena", OleDbType.VarChar, 255).Value = c.Contrasena;
             cmd.Parameters.Add("@DiasAntes", OleDbType.Integer, 255).Value = c.Dias;
+            cmd.Parameters.Add("@Imagen", OleDbType.Boolean, 1).Value = c.Imagen;
+            cmd.Parameters.Add("@Adjunto", OleDbType.VarChar, 255).Value = c.Adjunto;
             //cmd.Parameters.Add("@ID", OleDbType.Integer, 255).Value = c.Id;
 
 
