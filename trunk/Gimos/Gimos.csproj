@@ -82,9 +82,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\Gimos.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Imagenes\Gimos.png" />
   </ItemGroup>

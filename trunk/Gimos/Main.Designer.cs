@@ -385,13 +385,13 @@
             this.tableLayoutPanel1.Controls.Add(this.TxtCantDiasAntes, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.CheckImagenCumplanos, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblComentarios, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.lblCantidadEmails, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblComentarios, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lblCantidadEmails, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -399,9 +399,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(899, 487);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -419,7 +418,7 @@
             // 
             this.lblBody.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblBody.AutoSize = true;
-            this.lblBody.Location = new System.Drawing.Point(3, 178);
+            this.lblBody.Location = new System.Drawing.Point(3, 183);
             this.lblBody.Name = "lblBody";
             this.lblBody.Size = new System.Drawing.Size(34, 13);
             this.lblBody.TabIndex = 1;
@@ -441,7 +440,7 @@
             this.TxtBody.Location = new System.Drawing.Point(137, 108);
             this.TxtBody.Multiline = true;
             this.TxtBody.Name = "TxtBody";
-            this.TxtBody.Size = new System.Drawing.Size(739, 153);
+            this.TxtBody.Size = new System.Drawing.Size(739, 163);
             this.TxtBody.TabIndex = 3;
             // 
             // lblEmailOrigen
@@ -485,7 +484,7 @@
             // 
             this.lblDias.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDias.AutoSize = true;
-            this.lblDias.Location = new System.Drawing.Point(3, 277);
+            this.lblDias.Location = new System.Drawing.Point(3, 287);
             this.lblDias.Name = "lblDias";
             this.lblDias.Size = new System.Drawing.Size(119, 13);
             this.lblDias.TabIndex = 9;
@@ -494,7 +493,7 @@
             // TxtCantDiasAntes
             // 
             this.TxtCantDiasAntes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtCantDiasAntes.Location = new System.Drawing.Point(137, 274);
+            this.TxtCantDiasAntes.Location = new System.Drawing.Point(137, 284);
             this.TxtCantDiasAntes.MaxLength = 3;
             this.TxtCantDiasAntes.Name = "TxtCantDiasAntes";
             this.TxtCantDiasAntes.Size = new System.Drawing.Size(739, 20);
@@ -509,7 +508,7 @@
             this.tableLayoutPanel2.Controls.Add(this.BtnImagenCumplanos, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.TxtImagen, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(137, 307);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(137, 317);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -541,7 +540,7 @@
             // 
             this.CheckImagenCumplanos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CheckImagenCumplanos.AutoSize = true;
-            this.CheckImagenCumplanos.Location = new System.Drawing.Point(3, 320);
+            this.CheckImagenCumplanos.Location = new System.Drawing.Point(3, 330);
             this.CheckImagenCumplanos.Name = "CheckImagenCumplanos";
             this.CheckImagenCumplanos.Size = new System.Drawing.Size(61, 17);
             this.CheckImagenCumplanos.TabIndex = 18;
@@ -553,7 +552,7 @@
             this.lblComentarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblComentarios.AutoSize = true;
             this.lblComentarios.ForeColor = System.Drawing.Color.Red;
-            this.lblComentarios.Location = new System.Drawing.Point(137, 449);
+            this.lblComentarios.Location = new System.Drawing.Point(137, 420);
             this.lblComentarios.Name = "lblComentarios";
             this.lblComentarios.Size = new System.Drawing.Size(0, 13);
             this.lblComentarios.TabIndex = 12;
@@ -561,9 +560,9 @@
             // lblCantidadEmails
             // 
             this.lblCantidadEmails.AutoSize = true;
-            this.lblCantidadEmails.Location = new System.Drawing.Point(137, 479);
+            this.lblCantidadEmails.Location = new System.Drawing.Point(137, 447);
             this.lblCantidadEmails.Name = "lblCantidadEmails";
-            this.lblCantidadEmails.Size = new System.Drawing.Size(0, 8);
+            this.lblCantidadEmails.Size = new System.Drawing.Size(0, 13);
             this.lblCantidadEmails.TabIndex = 13;
             // 
             // tableLayoutPanel3
@@ -574,7 +573,7 @@
             this.tableLayoutPanel3.Controls.Add(this.BtnGuardarCumpleanos, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.BtnEnviar, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(137, 357);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(137, 367);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));

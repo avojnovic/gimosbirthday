@@ -26,3 +26,16 @@ C:\Projects\Gimos\Gimos\bin\Debug\Gimos.exe.config
 C:\Projects\Gimos\Gimos\obj\x86\Debug\ResGen.read.1.tlog
 C:\Projects\Gimos\Gimos\obj\x86\Debug\ResGen.write.1.tlog
 C:\Projects\Gimos\Gimos\bin\Debug\DB\Gimos.accdb
+D:\Proyectos\Gimos\Gimos\bin\Debug\Gimos.exe.config
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.exe
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.pdb
+D:\Proyectos\Gimos\Gimos\bin\Debug\Gimos.exe
+D:\Proyectos\Gimos\Gimos\bin\Debug\Gimos.pdb
+D:\Proyectos\Gimos\Gimos\bin\Debug\BusinessObjects.dll
+D:\Proyectos\Gimos\Gimos\bin\Debug\DAO.dll
+D:\Proyectos\Gimos\Gimos\bin\Debug\BusinessObjects.pdb
+D:\Proyectos\Gimos\Gimos\bin\Debug\DAO.pdb
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.csprojResolveAssemblyReference.cache
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.Main.resources
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.Properties.Resources.resources
+D:\Proyectos\Gimos\Gimos\obj\x86\Debug\Gimos.csproj.GenerateResource.Cache
