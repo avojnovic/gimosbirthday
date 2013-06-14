@@ -1,0 +1,5 @@
+C:\Projects\Gimos\SetAccessRights\bin\Debug\SetAccessRights.exe
+C:\Projects\Gimos\SetAccessRights\bin\Debug\SetAccessRights.pdb
+C:\Projects\Gimos\SetAccessRights\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projects\Gimos\SetAccessRights\obj\x86\Debug\SetAccessRights.exe
+C:\Projects\Gimos\SetAccessRights\obj\x86\Debug\SetAccessRights.pdb
